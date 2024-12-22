@@ -1,4 +1,4 @@
-package CLASS_12_PROGRAMS;
+package CLASS_11_PROGRAMS;
 import java.util.*;  
 class PrintingVowelWordsSentence 
 {  
