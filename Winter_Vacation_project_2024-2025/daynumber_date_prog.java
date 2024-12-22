@@ -3,21 +3,22 @@ class daynumber_date_prog
 {
     int[] m = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
     String[] mn = { "0", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Sept", "Oct", "Nov", "Dec" };
-    public String check(int dn, int y) 
+    public String check_date(int dn, int y) 
     {
         if (y % 4 == 0)
             m[2] = 29;
-        int s = 0, d = 0;
+        int s = 0, d =0;
         String mon = "", date = "";
         for (int i = 1; i < m.length; i++) 
-        {
-            s += m[i];
-            if (s >= dn) 
-            {
-                mon = mn[i];
-                d = dn - (s - m[i]);
-                break;
-            }
+        {  
+            if (dn <= m[i]) 
+            {  
+               mon = mn[i]; 
+               d = dn;  
+               break;  
+            } 
+            else 
+               dn -= m[i];  
         }
         if (d == 1||d==21||d==31)
             date = d + "st";
@@ -59,10 +60,10 @@ class daynumber_date_prog
             System.exit(0);
         }
         daynumber_date_prog obj = new daynumber_date_prog();
-        String out1 = obj.check(dn, y);
-        System.out.println(out1);
+        String out1 = obj.check_date(dn, y);
+        System.out.println("Date = " +out1);
         int newdn = dn - n;
-        String out2 = obj.check(newdn, y);
+        String out2 = obj.check_date(newdn, y);
         System.out.println("Date before " + n + " days = " + out2);
     }
 }
