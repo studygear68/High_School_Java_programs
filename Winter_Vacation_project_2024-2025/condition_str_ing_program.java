@@ -3,10 +3,11 @@ class condition_str_ing_program
 {
     public static void main(String[] args) 
     {
-        String str = "", s = "", s1 = "";
+        String str, s = "", s1 = "";
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a sentence");
         str = sc.nextLine();
+        str=str.toUpperCase();
         if (str.endsWith(".") || str.endsWith("?")) 
         {
             s = str.replace(" ", "");
