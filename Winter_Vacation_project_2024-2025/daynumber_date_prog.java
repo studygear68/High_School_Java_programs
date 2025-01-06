@@ -9,7 +9,6 @@ class DayNumberDateProg
         months[2] = 29;  
       int sum = 0; 
       String month = "";  
-      String date = "";  
       for (int i = 1; i < months.length; i++) 
       {  
         if (dayNumber <= months[i]) 
@@ -44,11 +43,11 @@ class DayNumberDateProg
    }  
    public static void main(String[] args) 
    {  
-      Scanner scanner = new Scanner(System.in);  
+      Scanner sc = new Scanner(System.in);  
       System.out.print("Day Number = ");  
-      int dayNumber = scanner.nextInt();  
+      int dayNumber = sc.nextInt();  
       System.out.print("Year = ");  
-      int year = scanner.nextInt();  
+      int year = sc.nextInt();  
       if (year%4!=0 && dayNumber==366) 
       {  
         System.out.println("Invalid Day Number!");  
@@ -60,20 +59,20 @@ class DayNumberDateProg
         System.exit(0);  
       }  
       System.out.print("Date before (n) = ");  
-      int n = scanner.nextInt();  
+      int n = sc.nextInt();  
       if (n < 1 || n > 366) 
       {  
         System.out.println("Invalid date");  
         System.exit(0);  
       }  
-      if (n > dayNumber) 
-      {  
-        System.out.println("D6ate before " + n + " days does not lie in the same year.");  
-        System.exit(0);  
-      }  
       DayNumberDateProg obj = new DayNumberDateProg();  
       String output1 = obj.checkDate(dayNumber, year);  
-      System.out.println("Date = " + output1);  
+      System.out.println("Date = " + output1); 
+      if (n > dayNumber) 
+      {  
+        System.out.println("Date before " + n + " days does not lie in the same year.");  
+        System.exit(0);  
+      }  
       int newDayNumber = dayNumber - n;  
       String output2 = obj.checkDate(newDayNumber, year);  
       System.out.println("Date before " + n + " days = " + output2);  
