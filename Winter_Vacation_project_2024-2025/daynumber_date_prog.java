@@ -60,7 +60,7 @@ class DayNumberDateProg
       }  
       System.out.print("Date before (n) = ");  
       int n = sc.nextInt();  
-      if (n < 1 || n > 366) 
+      if (dayNumber < 1 || dayNumber > 366) 
       {  
         System.out.println("Invalid date");  
         System.exit(0);  
