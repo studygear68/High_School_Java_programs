@@ -30,5 +30,7 @@ class emirp_number
         else
         System.out.println(m+ " is not a Emirp Number");    
     }
+    else
+    System.out.println(m+ " is not a Emirp Number");
 }
 }
