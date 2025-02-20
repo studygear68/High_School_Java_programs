@@ -1,4 +1,3 @@
-package CLASS_11_PROGRAMS;
 import java.util.*;
 class WordWise 
 {

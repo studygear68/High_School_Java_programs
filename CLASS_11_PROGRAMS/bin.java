@@ -1,4 +1,3 @@
-package CLASS_11_PROGRAMS;
 class bin 
 {
     void bin(int a ) 
